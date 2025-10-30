@@ -34,10 +34,15 @@ function VotingSystem() {
     setVotes((prev) => ({ ...prev, [name]: prev[name] + 1 }));
   };
 
-  const winner =
-    candidates.length > 0
-      ? Object.keys(votes).reduce((a, b) => (votes[a] > votes[b] ? a : b))
-      : null;
+  let winner = null;
+
+  if (candidates.length > 0) {
+    const keys = Object.keys(votes);
+    winner = keys.reduce((a, b) => (votes[a] > votes[b] ? a : b));
+  } else {
+    winner = null;
+  }
+
 
   return (
     <div className="voting-container">

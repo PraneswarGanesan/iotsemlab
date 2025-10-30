@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import Calculator from './Calculator'
-import VotingSystem from './VotingSystem'
-import BirthdayReminder from './BirthdayReminder'
+import Calculator from './components/Calculator'
+import VotingSystem from './components/VotingSystem'
+import BirthdayReminder from './components/BirthdayReminder'
+import Practice from './practice/DVDpaya'
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <>
       <div>
         just fuck u rself
-        <Calculator />
+        <Practice />
        </div>
     </>
   )
