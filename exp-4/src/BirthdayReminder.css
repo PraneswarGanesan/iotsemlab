@@ -1,0 +1,55 @@
+.birthday-app {
+  text-align: center;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.form button {
+  padding: 6px 10px;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.people-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.person-card {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+}
+
+.person-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.check-btn {
+  padding: 8px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
