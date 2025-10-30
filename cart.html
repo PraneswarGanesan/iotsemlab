@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exp 4 – Simple Online Store</title>
+<style>
+body{font-family:Arial;text-align:center;background:#f4f4f4}
+.product{border:1px solid #ccc;padding:10px;margin:10px;display:inline-block;width:150px;background:#fff}
+button{margin-top:5px;padding:5px 8px;cursor:pointer}
+#cart{margin-top:20px;background:#fff;display:inline-block;padding:10px;border:1px solid #ccc}
+</style>
+</head>
+<body>
+
+<h2>🛒 Mini Online Store</h2>
+
+<div id="store">
+  <div class="product">
+    <p>Shirt – ₹500</p>
+    <button onclick="addToCart('Shirt',500)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <p>Shoes – ₹1200</p>
+    <button onclick="addToCart('Shoes',1200)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <p>Watch – ₹800</p>
+    <button onclick="addToCart('Watch',800)">Add to Cart</button>
+  </div>
+</div>
+
+<div id="cart">
+  <h3>Cart</h3>
+  <ul id="items"></ul>
+  <p>Total: ₹<span id="total">0</span></p>
+  <button onclick="checkout()">Checkout</button>
+</div>
+
+<script>
+let cart=[],total=0;
+
+function addToCart(name,price){
+  cart.push({name,price});
+  total+=price;
+  updateCart();
+}
+
+function updateCart(){
+  const list=document.getElementById("items");
+  list.innerHTML="";
+  cart.forEach(i=>{
+    const li=document.createElement("li");
+    li.textContent=i.name+" - ₹"+i.price;
+    list.appendChild(li);
+  });
+  document.getElementById("total").textContent=total;
+}
+
+function checkout(){
+  if(cart.length===0){alert("Cart is empty");return;}
+  alert("Checkout successful! Total ₹"+total);
+  cart=[];total=0;updateCart();
+}
+</script>
+
+</body>
+</html>
